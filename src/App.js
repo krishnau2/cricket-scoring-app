@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import MainComponent from './MainComponent';
 
+const initialState = { score: 5 };
+
+function myReducer(state = initialState, action) {
+  switch(action.type){
+    case 'INCREASE_SCORE_BY_ONE':
+      return {score: state.score + 1}
+
+    case 'INCREASE_SCORE_BY_TWO':
+      return { score: state.score + 2};
+
+    case 'INCREASE_SCORE_BY_THREE':
+      return { score: state.score + 3};
+
+    case 'INCREASE_SCORE_BY_FOUR':
+      return { score: state.score + 4};
+
+    case 'INCREASE_SCORE_BY_SIX':
+      return { score: state.score + 6};
+
+    default:
+      return state;
+  }
+}
+
+const myStore = createStore(myReducer);
 class App extends Component {
   render() {
     return (
-      <div className="container text-center">
-        <div className="card">
-          <span className="score">05 / 01</span><br />
-          <span className="overs">Overs: 0.5</span>
-        </div>
-        <div className="points-wrap">
-          <button className="point">1</button>
-          <button className="point">2</button>
-          <button className="point">3</button>
-          <button className="point">4</button>
-          <button className="point">6</button>
-        </div>
-        <div className="match-actions-wrap">
-          <button className="match-actions " disabled="disabled">Wicket !</button>
-          <button className="match-actions " disabled="disabled">No Ball</button>
-          <button className="match-actions" disabled="disabled">Wide</button>
-        </div>
-      </div>
+      <Provider store={ myStore }>
+        <MainComponent />
+      </Provider>
     );
   }
 }
