@@ -6,7 +6,7 @@ import MainComponent from "./MainComponent";
 const initialState = {
   runs: 0,
   balls: 0,
-  wicket: 0
+  wickets: 0
 };
 
 function myReducer(state = initialState, action) {
@@ -54,7 +54,7 @@ function myReducer(state = initialState, action) {
       return {
         ...state,
         balls: state.balls + 1,
-        wicket: state.wicket + 1
+        wickets: state.wickets + 1
       };
     case "INCREASE_NO_BALL_SCORE":
       return {

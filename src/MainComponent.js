@@ -5,7 +5,7 @@ import "./App.css";
 function mapStateToProps(state) {
   return {
     score: state.runs,
-    wicket: state.wicket,
+    wickets: state.wicket,
     balls: state.balls
   };
 }
@@ -73,7 +73,7 @@ class MainComponent extends Component {
       <div className="container text-center">
         <div className="card">
           <div className="score">
-            {this.props.score} / {this.props.wicket}
+            {this.props.score} / {this.props.wickets}
           </div>
           <br />
           <div className="overs">Overs: {this.calculateOver()}</div>
