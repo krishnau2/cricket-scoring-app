@@ -35,22 +35,23 @@
 }
 button.point {
   width: 60px;
-  height: 40px;
+  height: 60px;
   margin: 0px 5px;
   font-size: 23px;
-  background-color: #008cba;
+  background-color: #b30606;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 50px;
+  font-weight: bold;
 }
 button.match-actions {
   font-size: 16px;
-  width: 100px;
-  height: 30px;
-  margin-right: 25px;
+  width: 110px;
+  height: 40px;
+  margin-left: 20px;
   font-weight: bold;
   border-radius: 5px;
 }
 .wicket {
-  background-color: red;
+  background-color: #000;
   color: #fff;
 }
