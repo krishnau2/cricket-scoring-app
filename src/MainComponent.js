@@ -76,7 +76,7 @@ class MainComponent extends Component {
             {this.props.score} / {this.props.wicket}
           </div>
           <br />
-          <div className="overs">{this.calculateOver()}</div>
+          <div className="overs">Overs: {this.calculateOver()}</div>
         </div>
         <div className="points-wrap">
           <button className="point" onClick={this.props.addZeroRun}>
